@@ -7,7 +7,7 @@
 :hide-uri-scheme:
 
 = Proxmox-Project - Index
-Elias Brandstätter & Jonas Froeller
+Elias Brandstaetter & Jonas Froeller
 1.0.0, {docdate}: Index
 
 == Phase 1
