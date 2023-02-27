@@ -1,0 +1,18 @@
+:imagesdir: ./imgs
+:source-highlighter: highlight.js
+:doctype: book
+:toc: left
+:toclevels: 5
+:icons: font
+:hide-uri-scheme:
+
+= Proxmox-Project - Phase 1
+Elias Brandstätter & Jonas Froeller
+1.0.0, {docdate}: Phase 1
+
+== Einrichtung
+
+
+
+== Index
+xref:index.adoc[index]
