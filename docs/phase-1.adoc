@@ -1,3 +1,4 @@
+:imagesdir: ./images
 :source-highlighter: highlight.js
 :doctype: book
 :toc: left
@@ -10,13 +11,13 @@ Elias Brandstaetter & Jonas Froeller
 1.0.1, {docdate}: Phase 1
 
 == Einstellungen
-image::./imgs/container01-settings.png[]
+image::container01-settings.png[]
 
 == Probleme 
-image::./imgs/ERROR500-pve03.png[]
+image::ERROR500-pve03.png[]
 ~ falscher Node
 
-image::./imgs/ERROR599-pve01.png[]
+image::ERROR599-pve01.png[]
 
 == Index
 xref:index.adoc[index]

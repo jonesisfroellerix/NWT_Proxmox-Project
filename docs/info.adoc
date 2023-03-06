@@ -1,3 +1,4 @@
+:imagesdir: ./images
 :source-highlighter: highlight.js
 :doctype: book
 :toc: left
