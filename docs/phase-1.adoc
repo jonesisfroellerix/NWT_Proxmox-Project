@@ -6,13 +6,18 @@
 :icons: font
 :hide-uri-scheme:
 
-= Proxmox-Project - Phase 1
+= Proxmox-Project - Phase 1 - Container Erstellung
 Elias Brandstaetter & Jonas Froeller
-1.0.0, {docdate}: Phase 1
+1.0.1, {docdate}: Phase 1
 
-== Einrichtung
+== Einstellungen
+image::container01-settings.png[]
 
+== Probleme 
+image::ERROR500-pve03.png[]
+~ falscher Node
 
+image::ERROR599-pve01.png[]
 
 == Index
 xref:index.adoc[index]

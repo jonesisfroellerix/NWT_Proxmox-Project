@@ -1,0 +1,36 @@
+:imagesdir: ./imgs
+:source-highlighter: highlight.js
+:doctype: book
+:toc: left
+:toclevels: 5
+:icons: font
+:hide-uri-scheme:
+
+= Proxmox-Project - Info
+Elias Brandstaetter & Jonas Froeller
+1.0.0, {docdate}: Info
+
+== Allgemein
+
+[caption=,title="team - brandstaetter-froeller"]
+[%header,cols=7*]
+|===
+|TM1 | TM2 | NW | Adr. Start | Adr. Ende | Gluenetz | Gluenetz Adr.	
+
+|Brandstaetter Elias
+|Froeller Jonas
+|10.9.7.0 /24
+|10.9.7.225
+|10.9.7.238
+|10.9.7.240/28
+|10.9.7.243 (CT01: 10.9.7.254)
+
+|===
+
+== Links
+*Proxmox*: https://172.18.99.1:8006 +
+*Monitoring*: http://10.9.25.44:3000/login +
+*Docs:* https://nvs.htl-leonding.ac.at/script/mProxmox/proxmox.html
+
+== Index
+xref:index.adoc[index]

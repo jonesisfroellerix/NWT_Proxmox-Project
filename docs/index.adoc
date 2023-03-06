@@ -8,7 +8,10 @@
 
 = Proxmox-Project - Index
 Elias Brandstaetter & Jonas Froeller
-1.0.0, {docdate}: Index
+1.0.1, {docdate}: Index
 
-== Phase 1
-xref:phase-1.adoc[einrichtung]
+== Phasen
+* *Phase-01:* xref:phase-1.adoc[ct01-erstellung]
+
+== Info
+xref:info.adoc[infos]
