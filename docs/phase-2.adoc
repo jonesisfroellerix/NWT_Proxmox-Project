@@ -1,0 +1,81 @@
+:imagesdir: ./images
+:source-highlighter: highlight.js
+:doctype: book
+:toc: left
+:toclevels: 5
+:icons: font
+:hide-uri-scheme:
+
+= Proxmox-Project - Phase 2 - Container 1 Einrichtung
+Elias Brandstaetter & Jonas Froeller
+1.0.0, {docdate}: Phase 2
+
+== SSH
+
+*Status checken:* `sudo systemctl status ssh` => running 
+
+*Installation, falls der Server nicht installiert wäre:* 
+
+* Installation: `sudo apt install openssh-server` +
+* Aktivierung: `sudo systemctl enable ssh` +
+* Einschaltung: `sudo systemctl enable ssh` +
+* Neustart: `sudo service ssh restart`
+
+*Port öffnen:* `sudo ufw allow ssh` 
+
+*Konfiguration ändern:* `sudo nano /etc/ssh/sshd_config` 
+
+*SSH User erstellen:* `sudo useradd <username>`
+
+*Verbinden:* `ssh username@ip -i private_key` (root: ubuntu@10.9.7.225)
+
+== Rechte vergeben
+
+*Sudo Rechte an User vergeben:* `usermod -aG sudo username` +
+*Checken, ob diese erteilt wurden:* `groups username` +
+[red]*ERROR:* `Username is not in the sudoers file` +
+[green]*Lösung:* User in file hinzufügen: `sudo EDITOR=NANO visudo`
+
+== Standardprozedere
+
+*Updates machen:* `sudo apt-get update && sudo apt-get upgrade`
+
+== Webserver - [green]*NGINX*
+
+*Ports öffnen*: `sudo ufw allow 80/tcp`
+
+*Docs:* https://nginx.org/en/docs/ +
+*Ubuntu Installation:* https://nginx.org/en/linux_packages.html#Ubuntu 
+
+*Installation:* `sudo apt install nginx` +
+*Befehle:* `nginx -s <signal>` +
+Signal Optionen: 
+
+* stop — fast shutdown
+* quit — graceful shutdown
+* reload — reloading the configuration file
+* reopen — reopening the log files
+* sudo systemctl start nginx
+* sudo systemctl stop nginx
+* sudo systemctl restart nginx
+* check if hosted in commandline: curl http://localhost
+
+*Konfigurations-Datei:* /usr/local/nginx/conf/nginx.conf || /etc/nginx/nginx.conf || /usr/local/etc/nginx/nginx.conf
+
+=== Setting Up a Simple Proxy Server
+
+*Guide:* https://nginx.org/en/docs/beginners_guide.html +
+
+Konfiguration in /etc/nginx/nginx.conf
+```
+server {
+    listen 8080;
+    root /data/proxy-test;
+
+    location / {
+    }
+}`
+```
+
+== Index
+xref:index.adoc[index]

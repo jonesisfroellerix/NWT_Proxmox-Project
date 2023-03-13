@@ -11,7 +11,9 @@ Elias Brandstaetter & Jonas Froeller
 1.0.1, {docdate}: Index
 
 == Phasen
+
 * *Phase-01:* xref:phase-1.adoc[ct01-erstellung]
+* *Phase-01:* xref:phase-2.adoc[ct01-einrichtung]
 
 == Info
 xref:info.adoc[infos]
