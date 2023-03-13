@@ -7,7 +7,7 @@
 <meta name="generator" content="Asciidoctor 2.0.18">
 <meta name="author" content="Elias Brandstaetter &amp; Jonas Froeller">
 <link rel="icon" type="image/png" href="themes/favicon.png">
-<title>Proxmox-Project - Index</title>
+<title>Proxmox-Project - Phase 2 - Container 1 Einrichtung</title>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:300,300italic,400,400italic,600,600italic%7CNoto+Serif:400,400italic,700,700italic%7CDroid+Sans+Mono:400,700">
 <style>
 /*! Asciidoctor default stylesheet | MIT License | https://asciidoctor.org */
@@ -438,52 +438,284 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 @media amzn-kf8{#header,#content,#footnotes,#footer{padding:0}}
 </style>
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<style>
+pre.rouge table td { padding: 5px; }
+pre.rouge table pre { margin: 0; }
+pre.rouge, pre.rouge .w {
+  color: #24292f;
+  background-color: #f6f8fa;
+}
+pre.rouge .k, pre.rouge .kd, pre.rouge .kn, pre.rouge .kp, pre.rouge .kr, pre.rouge .kt, pre.rouge .kv {
+  color: #cf222e;
+}
+pre.rouge .gr {
+  color: #f6f8fa;
+}
+pre.rouge .gd {
+  color: #82071e;
+  background-color: #ffebe9;
+}
+pre.rouge .nb {
+  color: #953800;
+}
+pre.rouge .nc {
+  color: #953800;
+}
+pre.rouge .no {
+  color: #953800;
+}
+pre.rouge .nn {
+  color: #953800;
+}
+pre.rouge .sr {
+  color: #116329;
+}
+pre.rouge .na {
+  color: #116329;
+}
+pre.rouge .nt {
+  color: #116329;
+}
+pre.rouge .gi {
+  color: #116329;
+  background-color: #dafbe1;
+}
+pre.rouge .kc {
+  color: #0550ae;
+}
+pre.rouge .l, pre.rouge .ld, pre.rouge .m, pre.rouge .mb, pre.rouge .mf, pre.rouge .mh, pre.rouge .mi, pre.rouge .il, pre.rouge .mo, pre.rouge .mx {
+  color: #0550ae;
+}
+pre.rouge .sb {
+  color: #0550ae;
+}
+pre.rouge .bp {
+  color: #0550ae;
+}
+pre.rouge .ne {
+  color: #0550ae;
+}
+pre.rouge .nl {
+  color: #0550ae;
+}
+pre.rouge .py {
+  color: #0550ae;
+}
+pre.rouge .nv, pre.rouge .vc, pre.rouge .vg, pre.rouge .vi, pre.rouge .vm {
+  color: #0550ae;
+}
+pre.rouge .o, pre.rouge .ow {
+  color: #0550ae;
+}
+pre.rouge .gh {
+  color: #0550ae;
+  font-weight: bold;
+}
+pre.rouge .gu {
+  color: #0550ae;
+  font-weight: bold;
+}
+pre.rouge .s, pre.rouge .sa, pre.rouge .sc, pre.rouge .dl, pre.rouge .sd, pre.rouge .s2, pre.rouge .se, pre.rouge .sh, pre.rouge .sx, pre.rouge .s1, pre.rouge .ss {
+  color: #0a3069;
+}
+pre.rouge .nd {
+  color: #8250df;
+}
+pre.rouge .nf, pre.rouge .fm {
+  color: #8250df;
+}
+pre.rouge .err {
+  color: #f6f8fa;
+  background-color: #82071e;
+}
+pre.rouge .c, pre.rouge .ch, pre.rouge .cd, pre.rouge .cm, pre.rouge .cp, pre.rouge .cpf, pre.rouge .c1, pre.rouge .cs {
+  color: #6e7781;
+}
+pre.rouge .gl {
+  color: #6e7781;
+}
+pre.rouge .gt {
+  color: #6e7781;
+}
+pre.rouge .ni {
+  color: #24292f;
+}
+pre.rouge .si {
+  color: #24292f;
+}
+pre.rouge .ge {
+  color: #24292f;
+  font-style: italic;
+}
+pre.rouge .gs {
+  color: #24292f;
+  font-weight: bold;
+}
+</style>
 </head>
 <body class="book toc2 toc-left">
 <div id="header">
-<h1>Proxmox-Project - Index</h1>
+<h1>Proxmox-Project - Phase 2 - Container 1 Einrichtung</h1>
 <div class="details">
 <span id="author" class="author">Elias Brandstaetter &amp; Jonas Froeller</span><br>
-<span id="revnumber">version 1.0.1,</span>
+<span id="revnumber">version 1.0.0,</span>
 <span id="revdate">2023-03-13</span>
-<br><span id="revremark">Index</span>
+<br><span id="revremark">Phase 2</span>
 </div>
 <div id="toc" class="toc2">
 <div id="toctitle">Table of Contents</div>
 <ul class="sectlevel1">
-<li><a href="#_phasen">1. Phasen</a></li>
-<li><a href="#_info">2. Info</a></li>
+<li><a href="#_ssh">1. SSH</a></li>
+<li><a href="#_rechte_vergeben">2. Rechte vergeben</a></li>
+<li><a href="#_standardprozedere">3. Standardprozedere</a></li>
+<li><a href="#_webserver_nginx">4. Webserver - <strong class="green">NGINX</strong></a>
+<ul class="sectlevel2">
+<li><a href="#_setting_up_a_simple_proxy_server">4.1. Setting Up a Simple Proxy Server</a></li>
+</ul>
+</li>
+<li><a href="#_index">5. Index</a></li>
 </ul>
 </div>
 </div>
 <div id="content">
 <div class="sect1">
-<h2 id="_phasen"><a class="anchor" href="#_phasen"></a>1. Phasen</h2>
+<h2 id="_ssh"><a class="anchor" href="#_ssh"></a>1. SSH</h2>
 <div class="sectionbody">
+<div class="paragraph">
+<p><strong>Status checken:</strong> <code>sudo systemctl status ssh</code> &#8658; running</p>
+</div>
+<div class="paragraph">
+<p><strong>Installation, falls der Server nicht installiert wäre:</strong></p>
+</div>
 <div class="ulist">
 <ul>
 <li>
-<p><strong>Phase-01:</strong> <a href="phase-1.html">ct01-erstellung</a></p>
+<p>Installation: <code>sudo apt install openssh-server</code><br></p>
 </li>
 <li>
-<p><strong>Phase-01:</strong> <a href="phase-2.html">ct01-einrichtung</a></p>
+<p>Aktivierung: <code>sudo systemctl enable ssh</code><br></p>
+</li>
+<li>
+<p>Einschaltung: <code>sudo systemctl enable ssh</code><br></p>
+</li>
+<li>
+<p>Neustart: <code>sudo service ssh restart</code></p>
 </li>
 </ul>
+</div>
+<div class="paragraph">
+<p><strong>Port öffnen:</strong> <code>sudo ufw allow ssh</code></p>
+</div>
+<div class="paragraph">
+<p><strong>Konfiguration ändern:</strong> <code>sudo nano /etc/ssh/sshd_config</code></p>
+</div>
+<div class="paragraph">
+<p><strong>SSH User erstellen:</strong> <code>sudo useradd &lt;username&gt;</code></p>
+</div>
+<div class="paragraph">
+<p><strong>Verbinden:</strong> <code>ssh username@ip -i private_key</code> (root: ubuntu@10.9.7.225)</p>
 </div>
 </div>
 </div>
 <div class="sect1">
-<h2 id="_info"><a class="anchor" href="#_info"></a>2. Info</h2>
+<h2 id="_rechte_vergeben"><a class="anchor" href="#_rechte_vergeben"></a>2. Rechte vergeben</h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p><a href="info.html">infos</a></p>
+<p><strong>Sudo Rechte an User vergeben:</strong> <code>usermod -aG sudo username</code><br>
+<strong>Checken, ob diese erteilt wurden:</strong> <code>groups username</code><br>
+<strong class="red">ERROR:</strong> <code>Username is not in the sudoers file</code><br>
+<strong class="green">Lösung:</strong> User in file hinzufügen: <code>sudo EDITOR=NANO visudo</code></p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_standardprozedere"><a class="anchor" href="#_standardprozedere"></a>3. Standardprozedere</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p><strong>Updates machen:</strong> <code>sudo apt-get update &amp;&amp; sudo apt-get upgrade</code></p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_webserver_nginx"><a class="anchor" href="#_webserver_nginx"></a>4. Webserver - <strong class="green">NGINX</strong></h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p><strong>Ports öffnen</strong>: <code>sudo ufw allow 80/tcp</code></p>
+</div>
+<div class="paragraph">
+<p><strong>Docs:</strong> <a href="https://nginx.org/en/docs/" class="bare">nginx.org/en/docs/</a><br>
+<strong>Ubuntu Installation:</strong> <a href="https://nginx.org/en/linux_packages.html#Ubuntu" class="bare">nginx.org/en/linux_packages.html#Ubuntu</a></p>
+</div>
+<div class="paragraph">
+<p><strong>Installation:</strong> <code>sudo apt install nginx</code><br>
+<strong>Befehle:</strong> <code>nginx -s &lt;signal&gt;</code><br>
+Signal Optionen:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>stop — fast shutdown</p>
+</li>
+<li>
+<p>quit — graceful shutdown</p>
+</li>
+<li>
+<p>reload — reloading the configuration file</p>
+</li>
+<li>
+<p>reopen — reopening the log files</p>
+</li>
+<li>
+<p>sudo systemctl start nginx</p>
+</li>
+<li>
+<p>sudo systemctl stop nginx</p>
+</li>
+<li>
+<p>sudo systemctl restart nginx</p>
+</li>
+<li>
+<p>check if hosted in commandline: curl <a href="http://localhost" class="bare">localhost</a></p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p><strong>Konfigurations-Datei:</strong> /usr/local/nginx/conf/nginx.conf || /etc/nginx/nginx.conf || /usr/local/etc/nginx/nginx.conf</p>
+</div>
+<div class="sect2">
+<h3 id="_setting_up_a_simple_proxy_server"><a class="anchor" href="#_setting_up_a_simple_proxy_server"></a>4.1. Setting Up a Simple Proxy Server</h3>
+<div class="paragraph">
+<p><strong>Guide:</strong> <a href="https://nginx.org/en/docs/beginners_guide.html" class="bare">nginx.org/en/docs/beginners_guide.html</a><br></p>
+</div>
+<div class="paragraph">
+<p>Konfiguration in /etc/nginx/nginx.conf</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="rouge highlight"><code>server {
+    listen 8080;
+    root /data/proxy-test;
+
+    location / {
+    }
+}`</code></pre>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_index"><a class="anchor" href="#_index"></a>5. Index</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p><a href="index.html">index</a></p>
 </div>
 </div>
 </div>
 </div>
 <div id="footer">
 <div id="footer-text">
-Version 1.0.1<br>
+Version 1.0.0<br>
 Last updated 2023-03-13 15:21:36 UTC
 </div>
 </div>
